@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  title: gateway
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000/dev'
+    description: localhost
+paths:
+  /hello:
+    post:
+      summary: ''
+      operationId: post-hello
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/HelloResponse.v1.yaml
+              examples:
+                Example:
+                  value:
+                    message: Hello Coalition
+          headers: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/HelloRequest.v1.yaml
+            examples:
+              Example:
+                value:
+                  name: Coalition
+        description: ''
