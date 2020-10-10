@@ -1,11 +1,8 @@
 module.exports = {
-  clearMocks: true,
-  coverageDirectory: 'coverage',
-  coverageProvider: 'v8',
-  moduleFileExtensions: ['ts'],
-  rootDir: 'src',
+  testMatch: ['**/*.test.ts'],
   testEnvironment: 'node',
+  rootDir: 'src',
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest',
+    '^.+\\.ts?$': 'ts-jest',
   },
 };

@@ -1,4 +1,12 @@
-node_modules
-.serverless
-.build
+.log
 coverage
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+dist
+
+
+# Yarn 2
+.yarn/*

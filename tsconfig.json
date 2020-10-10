@@ -1,14 +1,6 @@
 {
+  "extends": "./base.tsconfig.json",
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "commonjs",
-    "lib": ["ES2019"],
-    "sourceMap": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src"],
-  "exclude": [".build"]
+    "outDir": "dist"
+  }
 }

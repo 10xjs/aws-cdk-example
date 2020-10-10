@@ -1,4 +1,22 @@
-node_modules
-.serverless
-.build
+.log
 coverage
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+dist
+
+
+**/*.js
+!.pnp.js
+
+# Yarn 2
+# See: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+

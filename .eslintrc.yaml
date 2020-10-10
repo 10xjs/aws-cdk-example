@@ -1,7 +1,12 @@
-extends:
-  - standard-with-typescript
+extends: standard-with-typescript
 
-parser: "@typescript-eslint/parser"
+parser: '@typescript-eslint/parser'
 
 parserOptions:
   project: ./tsconfig.json
+
+overrides:
+  - files: '**/*.test.ts'
+    plugins:
+      - jest
+    extends: plugin:jest/all
