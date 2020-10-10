@@ -3,32 +3,41 @@ info:
   title: gateway
   version: '1.0'
 servers:
-  - url: 'http://localhost:3000/dev'
-    description: localhost
+  - url: 'https://unfifsuekk.execute-api.us-west-2.amazonaws.com/prod'
 paths:
-  /hello:
-    post:
-      summary: ''
-      operationId: post-hello
+  /contacts:
+    get:
+      operationId: list-contacts
+      summary: List Contacts
+      tags: []
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: ../models/HelloResponse.v1.yaml
-              examples:
-                Example:
-                  value:
-                    message: Hello Coalition
-          headers: {}
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/HelloRequest.v1.yaml
-            examples:
-              Example:
-                value:
-                  name: Coalition
-        description: ''
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: ../models/generated/Contact.json
+              examples: {}
+  /accounts:
+    get:
+      summary: List Accounts
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: ../models/generated/Account.json
+              examples: {}
+      operationId: get-accounts

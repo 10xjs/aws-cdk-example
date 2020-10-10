@@ -1,8 +1,0 @@
-title: Hello Response
-type: object
-properties:
-  message:
-    type: string
-    example: Hello Coalition
-required:
-  - message

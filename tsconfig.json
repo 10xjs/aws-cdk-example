@@ -1,6 +1,4 @@
 {
   "extends": "./base.tsconfig.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  }
+  "exclude": ["cdk.out"]
 }

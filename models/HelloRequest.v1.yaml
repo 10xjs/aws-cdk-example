@@ -1,8 +1,0 @@
-title: Hello Request
-type: object
-properties:
-  name:
-    type: string
-    example: Coalition
-required:
-  - name

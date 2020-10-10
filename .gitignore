@@ -7,7 +7,7 @@ cdk.out
 
 dist
 
-
+**/*.d.ts
 **/*.js
 !.pnp.js
 
