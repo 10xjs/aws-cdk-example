@@ -7,7 +7,7 @@ servers:
 paths:
   /contacts:
     get:
-      operationId: list-contacts
+      operationId: get-contacts
       summary: List Contacts
       tags: []
       responses:
@@ -21,7 +21,7 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: ../models/generated/Contact.json
+                      $ref: ../models/generated/schema.json#/definitions/Contact
               examples: {}
   /accounts:
     get:
@@ -38,6 +38,26 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: ../models/generated/Account.json
+                      $ref: ../models/generated/schema.json#/definitions/Account
               examples: {}
       operationId: get-accounts
+  '/accounts/{id}/relationships/contacts':
+    parameters:
+      - schema:
+          type: string
+          example: i
+        name: id
+        in: path
+        required: true
+    post:
+      summary: Add Account Contact
+      operationId: post-accounts-id-relationships-contacts
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Remove Account Contact
+      operationId: delete-accounts-id-relationships-contacts
+      responses:
+        '200':
+          description: OK

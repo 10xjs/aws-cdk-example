@@ -3,7 +3,6 @@
  *
  * https://jsonapi.org/format/#document-meta
  *
- * @example {}
  * @internal
  */
 export interface ApiMeta {
@@ -63,7 +62,6 @@ export interface ApiResourceIdentifier {
    * The type member is used to describe resource objects that share common
    * attributes and relationships.
    *
-   * @example resources
    * @hidden
    */
   type: string;
@@ -71,7 +69,6 @@ export interface ApiResourceIdentifier {
   /**
    * The id combined with type identify a globally unique resource.
    *
-   * @example id
    * @readOnly
    * @hidden
    */
@@ -164,7 +161,6 @@ export interface ApiResource {
    * The type member is used to describe resource objects that share common
    * attributes and relationships.
    *
-   * @example resources
    * @hidden
    */
   type: string;
@@ -172,7 +168,6 @@ export interface ApiResource {
   /**
    * The id combined with type identify a globally unique resource.
    *
-   * @example id
    * @readOnly
    * @hidden
    */

@@ -3,7 +3,12 @@ import {Timestamps} from './Timestamps';
 
 export declare class Contact implements ApiResource {
   type: 'contacts';
+
+  /**
+   * @example id
+   */
   id: string;
+
   attributes: {
     /**
      * @example Joshua
@@ -20,5 +25,6 @@ export declare class Contact implements ApiResource {
      */
     email: string;
   };
+
   meta: Timestamps;
 }

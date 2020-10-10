@@ -11,13 +11,15 @@
         },
         "id": {
           "type": "string",
-          "description": "The id combined with type identify a globally unique resource."
+          "description": "The id combined with type identify a globally unique resource.",
+          "example": "id"
         },
         "attributes": {
           "type": "object",
           "properties": {
             "name": {
-              "type": "string"
+              "type": "string",
+              "example": "Coalition Inc."
             }
           },
           "required": [
@@ -30,7 +32,8 @@
           "type": "object",
           "properties": {
             "self": {
-              "type": "string"
+              "type": "string",
+              "example": "/accounts/id"
             }
           },
           "required": [
@@ -49,10 +52,12 @@
                   "type": "object",
                   "properties": {
                     "self": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "/accounts/id/relationships/contacts"
                     },
                     "related": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "/accounts/id/contacts"
                     }
                   },
                   "required": [
@@ -104,7 +109,8 @@
         "relationships",
         "meta"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "Account resource"
     },
     "Contact": {
       "type": "object",
@@ -116,7 +122,8 @@
         },
         "id": {
           "type": "string",
-          "description": "The id combined with type identify a globally unique resource."
+          "description": "The id combined with type identify a globally unique resource.",
+          "example": "id"
         },
         "attributes": {
           "type": "object",
