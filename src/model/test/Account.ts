@@ -1,10 +1,20 @@
-import {ApiResource} from './JsonApi';
-import {Timestamps} from './Timestamps';
+import {Foo} from '../Contact';
+import * as JsonApi from '../JsonApi';
+import {Timestamps} from '../Timestamps';
+
+export interface AccountAttributes extends JsonApi.ResourceAttributes {
+  /**
+   * @example Coalition Inc.
+   */
+  name: string;
+
+  foo: Foo;
+}
 
 /**
  * Account resource
  */
-export declare class Account implements ApiResource {
+export interface Account extends JsonApi.Resource {
   type: 'accounts';
 
   /**
@@ -12,12 +22,7 @@ export declare class Account implements ApiResource {
    */
   id: string;
 
-  attributes: {
-    /**
-     * @example Coalition Inc.
-     */
-    name: string;
-  };
+  attributes: AccountAttributes;
 
   links: {
     /**

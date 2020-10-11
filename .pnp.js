@@ -46,7 +46,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/aws-lambda", "npm:8.10.63"],
             ["@types/aws-sdk", "npm:2.7.0"],
             ["@types/jest", "npm:26.0.14"],
+            ["@types/json-schema", "npm:7.0.6"],
             ["@types/node", "npm:14.11.8"],
+            ["@types/prettier", "npm:2.1.2"],
             ["@types/uuid", "npm:8.3.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.0"],
             ["@typescript-eslint/parser", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.0"],
@@ -54,14 +56,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["aws-sdk", "npm:2.771.0"],
             ["eslint", "npm:7.11.0"],
             ["eslint-config-standard-with-typescript", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:19.0.1"],
+            ["eslint-import-resolver-node", "npm:0.3.4"],
             ["eslint-plugin-import", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:2.22.1"],
             ["eslint-plugin-jest", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:24.1.0"],
             ["eslint-plugin-node", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:11.1.0"],
             ["eslint-plugin-promise", "npm:4.2.1"],
             ["eslint-plugin-standard", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.0.1"],
             ["jest", "npm:26.5.2"],
+            ["json-schema", "npm:0.2.5"],
+            ["prettier", "npm:2.1.2"],
             ["source-map-support", "npm:0.5.19"],
-            ["ts-json-schema-generator", "npm:0.75.0"],
+            ["ts-json-schema-generator", "npm:0.76.1"],
             ["ts-node", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:9.0.0"],
             ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"],
             ["typescript-json-schema", "npm:0.43.0"],
@@ -2068,6 +2073,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/prettier", "npm:2.1.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.1.2", {
+          "packageLocation": "./.yarn/cache/@types-prettier-npm-2.1.2-cbef6ccae6-fbb0284ae1.zip/node_modules/@types/prettier/",
+          "packageDependencies": [
+            ["@types/prettier", "npm:2.1.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@types/stack-utils", [
@@ -3064,7 +3076,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/aws-lambda", "npm:8.10.63"],
             ["@types/aws-sdk", "npm:2.7.0"],
             ["@types/jest", "npm:26.0.14"],
+            ["@types/json-schema", "npm:7.0.6"],
             ["@types/node", "npm:14.11.8"],
+            ["@types/prettier", "npm:2.1.2"],
             ["@types/uuid", "npm:8.3.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.0"],
             ["@typescript-eslint/parser", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.0"],
@@ -3072,14 +3086,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["aws-sdk", "npm:2.771.0"],
             ["eslint", "npm:7.11.0"],
             ["eslint-config-standard-with-typescript", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:19.0.1"],
+            ["eslint-import-resolver-node", "npm:0.3.4"],
             ["eslint-plugin-import", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:2.22.1"],
             ["eslint-plugin-jest", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:24.1.0"],
             ["eslint-plugin-node", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:11.1.0"],
             ["eslint-plugin-promise", "npm:4.2.1"],
             ["eslint-plugin-standard", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.0.1"],
             ["jest", "npm:26.5.2"],
+            ["json-schema", "npm:0.2.5"],
+            ["prettier", "npm:2.1.2"],
             ["source-map-support", "npm:0.5.19"],
-            ["ts-json-schema-generator", "npm:0.75.0"],
+            ["ts-json-schema-generator", "npm:0.76.1"],
             ["ts-node", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:9.0.0"],
             ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"],
             ["typescript-json-schema", "npm:0.43.0"],
@@ -6200,6 +6217,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["json-schema", "npm:0.2.3"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:0.2.5", {
+          "packageLocation": "./.yarn/cache/json-schema-npm-0.2.5-5ed2bbc92a-553d8f9846.zip/node_modules/json-schema/",
+          "packageDependencies": [
+            ["json-schema", "npm:0.2.5"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["json-schema-traverse", [
@@ -7376,6 +7400,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/prelude-ls-npm-1.2.1-3e4d272a55-bc1649f521.zip/node_modules/prelude-ls/",
           "packageDependencies": [
             ["prelude-ls", "npm:1.2.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["prettier", [
+        ["npm:2.1.2", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.1.2-9d456ef3cd-bedc24c568.zip/node_modules/prettier/",
+          "packageDependencies": [
+            ["prettier", "npm:2.1.2"]
           ],
           "linkType": "HARD",
         }]
@@ -8735,12 +8768,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["ts-json-schema-generator", [
-        ["npm:0.75.0", {
-          "packageLocation": "./.yarn/cache/ts-json-schema-generator-npm-0.75.0-6f64c27586-316548bb10.zip/node_modules/ts-json-schema-generator/",
+        ["npm:0.76.1", {
+          "packageLocation": "./.yarn/cache/ts-json-schema-generator-npm-0.76.1-4ecb70b029-75a21116b4.zip/node_modules/ts-json-schema-generator/",
           "packageDependencies": [
-            ["ts-json-schema-generator", "npm:0.75.0"],
+            ["ts-json-schema-generator", "npm:0.76.1"],
             ["@types/json-schema", "npm:7.0.6"],
             ["commander", "npm:6.1.0"],
+            ["fast-json-stable-stringify", "npm:2.1.0"],
             ["glob", "npm:7.1.6"],
             ["json-stable-stringify", "npm:1.0.1"],
             ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"]

@@ -1,9 +1,135 @@
 extends: standard-with-typescript
 
 parser: '@typescript-eslint/parser'
-
 parserOptions:
   project: ./tsconfig.json
+
+rules:
+  # Disable rules that conflict with prettier.
+  '@typescript-eslint/semi': 0
+  semi: 0
+  comma-dangle: 0
+  object-curly-spacing: 0
+  '@typescript-eslint/space-before-function-paren': 0
+  space-before-function-paren: 0
+  '@typescript-eslint/member-delimiter-style': 0
+  '@typescript-eslint/indent': 0
+
+  '@typescript-eslint/explicit-function-return-type': 0
+
+  '@typescript-eslint/no-shadow': 2
+
+  # Override the default configuration of the strict-boolean-expressions rule to
+  # allow safe boolean conversion of non-nullable strings, numbers and objects.
+  '@typescript-eslint/strict-boolean-expressions':
+    - error
+    - allowString: true
+      allowNumber: true
+      allowNullableObject: true
+
+  # Attempt to standardize our naming conventions. This is a tricky task since
+  # edge-cases are everywhere when dealing with 3rd party code and and API data.
+  camelcase: 0
+  '@typescript-eslint/naming-convention':
+    - 2
+
+    # Set up very strict defaults to be overridden with targeted rules below.
+    - selector: default
+      format:
+        - camelCase
+
+    # Relax restrictions for property and variable names.
+    - selector:
+        - variable
+        - property
+      format:
+        - camelCase
+        - PascalCase
+        - snake_case
+        - UPPER_CASE
+      leadingUnderscore: allow
+
+    # Relax restrictions for and method names.
+    - selector:
+        - method
+      format:
+        - camelCase
+        - PascalCase
+      leadingUnderscore: allow
+
+    # Allow __UPPER_CASE__ and __snake_case__ format global vars.
+    # see: https://webpack.js.org/api/module-variables/
+    - selector:
+        - variable
+        - property
+      format: null
+      filter: ^__(([A-Z]|[a-z])+_)+_$
+
+    # Allow snake case and underscore prefixed function param names.
+    - selector:
+        - parameter
+      format:
+        - camelCase
+        - PascalCase
+        - snake_case
+      leadingUnderscore: allow
+
+    # Allow pascal cased function names.
+    - selector: function
+      format:
+        - camelCase
+        - PascalCase
+      leadingUnderscore: allow
+
+    # Require private class properties to be underscore-prefixed.
+    - selector:
+        - property
+        - parameterProperty
+        - method
+      modifiers:
+        - private
+      format:
+        - camelCase
+      leadingUnderscore: require
+
+    # Allow only camel and pascal cased static members.
+    - selector:
+        - property
+        - method
+      modifiers:
+        - static
+      format:
+        - camelCase
+        - PascalCase
+
+    # Allow `dangerouslySetInnerHTML={{__html: <string>}}`.
+    - selector: property
+      format: null
+      types:
+        - string
+      filter: ^__html$
+
+    # Require all type identifies to use pascal case.
+    - selector: typeLike
+      format:
+        - PascalCase
+
+    # Require all type identifies to use pascal case.
+    - selector: typeLike
+      format: null
+      filter: ^[A-Z]{2}$
+
+    # Require type parameters to be T-prefixed.
+    - selector: typeParameter
+      format:
+        - PascalCase
+      prefix:
+        - T
+
+    # Allow a single character type parameter to be any uppercase letter.
+    - selector: typeParameter
+      format: null
+      filter: ^[A-Z]$
 
 overrides:
   - files: '**/*.test.ts'

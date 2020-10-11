@@ -8,6 +8,7 @@
     "alwaysStrict": true,
     "inlineSourceMap": true,
     "inlineSources": true
+    // "noUnusedLocals": true
   },
   "exclude": ["cdk.out"]
 }

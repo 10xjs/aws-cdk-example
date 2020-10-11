@@ -5,7 +5,7 @@
  *
  * @internal
  */
-export interface ApiMeta {
+export interface Meta {
   /**
    * Any members MAY be specified within meta objects
    *
@@ -22,13 +22,13 @@ export interface ApiMeta {
  * @format uri
  * @internal
  */
-export type ApiLink =
+export type Link =
   | string
   | {
       /**
        * @hidden
        */
-      meta?: ApiMeta;
+      meta?: Meta;
       /**
        * @format uri
        * @hidden
@@ -43,11 +43,11 @@ export type ApiLink =
  *
  * @internal
  */
-export interface ApiLinks {
+export interface Links {
   /**
    * @hidden
    */
-  [key: string]: ApiLink;
+  [key: string]: Link;
 }
 
 /**
@@ -80,7 +80,7 @@ export interface ApiResourceIdentifier {
    *
    * @hidden
    */
-  meta?: ApiMeta;
+  meta?: Meta;
 }
 
 /**
@@ -96,7 +96,7 @@ export interface ApiRelationship {
    *
    * @hidden
    */
-  links?: ({self: ApiLink} | {related: ApiLink}) & ApiLinks;
+  links?: ({self: Link} | {related: Link}) & Links;
   /**
    * Resource linkage in a compound document allows a client to link together all
    * of the included resource objects without having to GET any URLs via links.
@@ -113,7 +113,7 @@ export interface ApiRelationship {
    *
    * @hidden
    */
-  meta?: ApiMeta;
+  meta?: Meta;
 }
 
 /**
@@ -124,7 +124,7 @@ export interface ApiRelationship {
  *
  * @internal
  */
-export interface ApiRelationships {
+export interface Relationships {
   /**
    * Members of the relationships object ("relationships") represent references
    * from the resource object in which it’s defined to other resource objects.
@@ -134,13 +134,16 @@ export interface ApiRelationships {
 }
 
 /**
- * JSON:API meta information.
+ * JSON:API resource object attributes.
  *
- * https://jsonapi.org/format/#document-meta
+ * Members of the attributes object (“attributes”) represent information about
+ * the resource object in which it’s defined.
+ *
+ * https://jsonapi.org/format/#document-resource-object-attributes
  *
  * @internal
  */
-export interface ApiAttributes {
+export interface ResourceAttributes {
   /**
    * @hidden
    */
@@ -156,7 +159,7 @@ export interface ApiAttributes {
  *
  * @internal
  */
-export interface ApiResource {
+export interface Resource {
   /**
    * The type member is used to describe resource objects that share common
    * attributes and relationships.
@@ -178,7 +181,7 @@ export interface ApiResource {
    *
    * @hidden
    */
-  attributes?: ApiAttributes;
+  attributes?: ResourceAttributes;
 
   /**
    * A relationships object describing relationships between the resource and
@@ -186,14 +189,14 @@ export interface ApiResource {
    *
    * @hidden
    */
-  relationships?: ApiRelationships;
+  relationships?: Relationships;
 
   /**
    * A links object containing links related to the resource.
    *
    * @hidden
    */
-  links?: ApiLinks;
+  links?: Links;
 
   /**
    * A meta object containing non-standard meta-information about a resource
@@ -201,7 +204,7 @@ export interface ApiResource {
    *
    * @hidden
    */
-  meta?: ApiMeta;
+  meta?: Meta;
 }
 
 /**
@@ -211,7 +214,7 @@ export interface ApiResource {
  *
  * @internal
  */
-export interface ApiResponse {
+export interface ResponseDocument {
   /**
    * The document's primary data is a representation of the resource or
    * collection of resources targeted by a request.
@@ -219,9 +222,9 @@ export interface ApiResponse {
    * @hidden
    */
   data:
-    | ApiResource
+    | Resource
     | ApiResourceIdentifier
-    | ApiResource[]
+    | Resource[]
     | ApiResourceIdentifier[]
     | null;
 
@@ -230,14 +233,14 @@ export interface ApiResponse {
    *
    * @hidden
    */
-  meta?: ApiMeta;
+  meta?: Meta;
 
   /**
    * A links object related to the primary data.
    *
    * @hidden
    */
-  links?: ApiLinks;
+  links?: Links;
 
   /**
    * An array of resource objects that are related to the primary data and/or
@@ -245,7 +248,7 @@ export interface ApiResponse {
    *
    * @hidden
    */
-  included?: ApiResource[];
+  included?: Resource[];
 }
 
 /**
@@ -255,7 +258,7 @@ export interface ApiResponse {
  *
  * @internal
  */
-export interface ApiError {
+export interface Error {
   /**
    * A unique identifier for this particular occurrence of the problem.
    *
@@ -270,7 +273,7 @@ export interface ApiError {
    * @hidden
    */
   links?: {
-    about: ApiLink;
+    about: Link;
   };
 
   /**
@@ -332,7 +335,7 @@ export interface ApiError {
    *
    * @hidden
    */
-  meta?: ApiMeta;
+  meta?: Meta;
 }
 
 /**
@@ -341,7 +344,7 @@ export interface ApiError {
  * See: https://jsonapi.org/format/#document-top-level
  * @internal
  */
-export type ApiErrorResponse = {
+export interface ErrorDocument {
   /**
    * An array of error objects.
    *
@@ -354,5 +357,5 @@ export type ApiErrorResponse = {
    *
    * @hidden
    */
-  meta?: ApiMeta;
-};
+  meta?: Meta;
+}

@@ -1,7 +1,19 @@
-import {ApiResource} from './JsonApi';
+import * as JsonApi from './JsonApi';
 import {Timestamps} from './Timestamps';
 
-export declare class Contact implements ApiResource {
+export declare class Foo {
+  wtf: boolean;
+}
+
+export declare class Account {
+  wtf: number;
+}
+
+export declare class Account2 {
+  wtf: string;
+}
+
+export declare class Contact implements JsonApi.Resource {
   type: 'contacts';
 
   /**

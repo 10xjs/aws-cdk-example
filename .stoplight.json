@@ -1,5 +1,5 @@
 {
-  "exclude": ["nodejs"],
+  "exclude": [".vscode", ".yarn", "bin", "cdk.out", "lib", "resources"],
   "formats": {
     "openapi": {
       "rootDir": "reference"

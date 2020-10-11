@@ -1312,6 +1312,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@types/prettier@npm:2.1.2"
+  checksum: fbb0284ae165940e2d236d985477a3a7bf0215b5d32fe6dcb8b2cc80a7661ba52ce494ef73301c79b8eb315df27094f5529984f7b68e70c8cb1d451d0147031c
+  languageName: node
+  linkType: hard
+
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.0
   resolution: "@types/stack-utils@npm:2.0.0"
@@ -2161,7 +2168,9 @@ __metadata:
     "@types/aws-lambda": ^8.10.63
     "@types/aws-sdk": ^2.7.0
     "@types/jest": ^26.0.14
+    "@types/json-schema": ^7.0.6
     "@types/node": ^14.11.8
+    "@types/prettier": ^2.1.2
     "@types/uuid": ^8.3.0
     "@typescript-eslint/eslint-plugin": ^4.4.0
     "@typescript-eslint/parser": ^4.4.0
@@ -2169,14 +2178,17 @@ __metadata:
     aws-sdk: ^2.771.0
     eslint: ^7.11.0
     eslint-config-standard-with-typescript: ^19.0.1
+    eslint-import-resolver-node: ^0.3.4
     eslint-plugin-import: ^2.22.1
     eslint-plugin-jest: ^24.1.0
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^4.2.1
     eslint-plugin-standard: ^4.0.1
     jest: ^26.5.2
+    json-schema: ^0.2.5
+    prettier: ^2.1.2
     source-map-support: ^0.5.19
-    ts-json-schema-generator: ^0.75.0
+    ts-json-schema-generator: ^0.76.1
     ts-node: ^9.0.0
     typescript: ^4.0.3
     typescript-json-schema: ^0.43.0
@@ -2365,7 +2377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:~6.1.0":
+"commander@npm:^6.1.0":
   version: 6.1.0
   resolution: "commander@npm:6.1.0"
   checksum: ef1e310c3f430b84f8818ec9c6e5ce1b84909616eb2c1b1a79f646bc25fbca156eccf2ecf19f07e77a08dc519728d53d1300f94f3b2ad93de65add66044dfce6
@@ -3384,7 +3396,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-json-stable-stringify@npm:^2.0.0":
+"fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
   checksum: 7df3fabfe445d65953b2d9d9d3958bd895438b215a40fb87dae8b2165c5169a897785eb5d51e6cf0eb03523af756e3d82ea01083f6ac6341fe16db532fee3016
@@ -4955,6 +4967,13 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"json-schema@npm:^0.2.5":
+  version: 0.2.5
+  resolution: "json-schema@npm:0.2.5"
+  checksum: 553d8f98467d27b7a15445e1b21b0edc1ab3fc374b80f3f659b672b65cf132a4854b6d676625f221d80340aa922cd37c0cff1ad3ad5389474f4a5c1079d2c97b
+  languageName: node
+  linkType: hard
+
 "json-stable-stringify-without-jsonify@npm:^1.0.1":
   version: 1.0.1
   resolution: "json-stable-stringify-without-jsonify@npm:1.0.1"
@@ -6000,6 +6019,15 @@ fsevents@^2.1.2:
   version: 1.1.2
   resolution: "prelude-ls@npm:1.1.2"
   checksum: 189c969c92151b0de7a6e5d2ae0c4e50bbec5675cdd9fee3b7509d9d74b6416787ee36a8c12a07e8afb01454a8185b695b3395912484fa118e071fea45223b9b
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "prettier@npm:2.1.2"
+  bin:
+    prettier: bin-prettier.js
+  checksum: bedc24c568efbcfe45f255558900777e2fabb36bf28ed4c22d2456eb22dfb012d12e566a46472ea5b857a4e9f263e888f7e316527d00bb58188f1820b0b0031a
   languageName: node
   linkType: hard
 
@@ -7236,18 +7264,19 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"ts-json-schema-generator@npm:^0.75.0":
-  version: 0.75.0
-  resolution: "ts-json-schema-generator@npm:0.75.0"
+"ts-json-schema-generator@npm:^0.76.1":
+  version: 0.76.1
+  resolution: "ts-json-schema-generator@npm:0.76.1"
   dependencies:
     "@types/json-schema": ^7.0.6
-    commander: ~6.1.0
-    glob: ~7.1.6
+    commander: ^6.1.0
+    fast-json-stable-stringify: ^2.1.0
+    glob: ^7.1.6
     json-stable-stringify: ^1.0.1
     typescript: ~4.0.3
   bin:
     ts-json-schema-generator: bin/ts-json-schema-generator
-  checksum: 316548bb10f4a3eb202f95729a12f3f4c071694eebf78bc47c41fc5aaee68bc800069a4c167429999428c0486f19a9431043b2a4d05b31e20d194aac038faf06
+  checksum: 75a21116b4d96185eff06c959613e769a5bec9ea8e3dfa9a178519b241c3061e10fb413e66b0593b14cd0256f527bd608b6d05815586e95de4a5b963f7e4345d
   languageName: node
   linkType: hard
 
