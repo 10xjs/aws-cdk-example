@@ -57,7 +57,7 @@ export interface Links {
  *
  *  @internal
  */
-export interface ApiResourceIdentifier {
+export interface ResourceIdentifier {
   /**
    * The type member is used to describe resource objects that share common
    * attributes and relationships.
@@ -90,7 +90,7 @@ export interface ApiResourceIdentifier {
  *
  * @internal
  */
-export interface ApiRelationship {
+export interface Relationship {
   /**
    * A links object containing at least one of `self` or `related`
    *
@@ -105,7 +105,7 @@ export interface ApiRelationship {
    *
    * @hidden
    */
-  data?: null | ApiResourceIdentifier | ApiResourceIdentifier[];
+  data?: null | ResourceIdentifier | ResourceIdentifier[];
 
   /**
    * A meta object that contains non-standard meta-information about the
@@ -130,7 +130,7 @@ export interface Relationships {
    * from the resource object in which it’s defined to other resource objects.
    * @hidden
    */
-  [key: string]: ApiRelationship;
+  [key: string]: Relationship;
 }
 
 /**
@@ -223,9 +223,9 @@ export interface ResponseDocument {
    */
   data:
     | Resource
-    | ApiResourceIdentifier
+    | ResourceIdentifier
     | Resource[]
-    | ApiResourceIdentifier[]
+    | ResourceIdentifier[]
     | null;
 
   /**

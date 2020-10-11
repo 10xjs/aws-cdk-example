@@ -33,8 +33,42 @@
         "lastName",
         "email"
       ],
-      "additionalProperties": false,
       "description": "An attributes object representing some of the resource’s data."
+    },
+    "relationships": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "type": "object",
+          "properties": {
+            "links": {
+              "type": "object",
+              "properties": {
+                "self": {
+                  "type": "string"
+                },
+                "related": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "self",
+                "related"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "links"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "account"
+      ],
+      "additionalProperties": false,
+      "description": "A relationships object describing relationships between the resource and other JSON:API resources."
     },
     "meta": {
       "type": "object",
@@ -62,6 +96,7 @@
     "type",
     "id",
     "attributes",
+    "relationships",
     "meta"
   ],
   "additionalProperties": false

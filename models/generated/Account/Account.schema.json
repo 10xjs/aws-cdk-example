@@ -13,7 +13,16 @@
       "example": "id"
     },
     "attributes": {
-      "$ref": "AccountAttributes.schema.json",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Coalition Inc."
+        }
+      },
+      "required": [
+        "name"
+      ],
       "description": "An attributes object representing some of the resource’s data."
     },
     "links": {
@@ -40,12 +49,10 @@
               "type": "object",
               "properties": {
                 "self": {
-                  "type": "string",
-                  "example": "/accounts/id/relationships/contacts"
+                  "type": "string"
                 },
                 "related": {
-                  "type": "string",
-                  "example": "/accounts/id/contacts"
+                  "type": "string"
                 }
               },
               "required": [
@@ -64,7 +71,9 @@
       "required": [
         "contacts"
       ],
-      "additionalProperties": false,
+      "additionalProperties": {
+        "type": "object"
+      },
       "description": "A relationships object describing relationships between the resource and other JSON:API resources."
     },
     "meta": {

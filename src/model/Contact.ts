@@ -1,19 +1,24 @@
 import * as JsonApi from './JsonApi';
 import {Timestamps} from './Timestamps';
 
-export declare class Foo {
-  wtf: boolean;
+interface ContactAttributes extends JsonApi.ResourceAttributes {
+  /**
+   * @example Joshua
+   */
+  firstName: string;
+
+  /**
+   * @example Motta
+   */
+  lastName: string;
+
+  /**
+   * @format email
+   */
+  email: string;
 }
 
-export declare class Account {
-  wtf: number;
-}
-
-export declare class Account2 {
-  wtf: string;
-}
-
-export declare class Contact implements JsonApi.Resource {
+export interface Contact extends JsonApi.Resource {
   type: 'contacts';
 
   /**
@@ -21,21 +26,15 @@ export declare class Contact implements JsonApi.Resource {
    */
   id: string;
 
-  attributes: {
-    /**
-     * @example Joshua
-     */
-    firstName: string;
+  attributes: ContactAttributes;
 
-    /**
-     * @example Motta
-     */
-    lastName: string;
-
-    /**
-     * @format email
-     */
-    email: string;
+  relationships: {
+    account: {
+      links: {
+        self: string;
+        related: string;
+      };
+    };
   };
 
   meta: Timestamps;
