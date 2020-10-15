@@ -1,7 +1,7 @@
 import * as JsonApi from './JsonApi';
 import {Timestamps} from './Timestamps';
 
-interface ContactAttributes extends JsonApi.ResourceAttributes {
+export interface ContactAttributes extends JsonApi.ResourceAttributes {
   /**
    * @example Joshua
    */
@@ -13,11 +13,16 @@ interface ContactAttributes extends JsonApi.ResourceAttributes {
   lastName: string;
 
   /**
+   * Contact email address.
+   *
    * @format email
    */
   email: string;
 }
 
+/**
+ * Contact resource model.
+ */
 export interface Contact extends JsonApi.Resource {
   type: 'contacts';
 
