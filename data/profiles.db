@@ -1,0 +1,7 @@
+created(1602871165.4930806).
+assert(profile('53e73122-0fd9-11eb-81b4-0242ac110002')).
+assert(profile_attribute('53e73122-0fd9-11eb-81b4-0242ac110002',name,"")).
+assert(profile_attribute('53e73122-0fd9-11eb-81b4-0242ac110002',nick_name,"admin")).
+assert(profile_attribute('53e73122-0fd9-11eb-81b4-0242ac110002',email,"")).
+assert(profile_attribute('53e73122-0fd9-11eb-81b4-0242ac110002',external_identity,"admin")).
+assert(profile_attribute('53e73122-0fd9-11eb-81b4-0242ac110002',email_verified,true)).

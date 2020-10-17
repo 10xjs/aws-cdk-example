@@ -1,4 +1,4 @@
-import * as cdk from '@aws-cdk/core';
+import * as ts from 'typescript';
 
 import * as widget_service from '../lib/widget_service';
 

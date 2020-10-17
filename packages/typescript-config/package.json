@@ -1,0 +1,9 @@
+{
+  "name": "typescript-config",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "lib/index.js",
+  "engines": {
+    "node": "14.13.0"
+  }
+}
