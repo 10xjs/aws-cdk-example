@@ -10,6 +10,7 @@ gen_enforced_dependency(Workspace, Dependency, DesiredVersion, Type) :-
   workspace_has_dependency(Workspace, Dependency, Version, Type),
   pin_version(DesiredVersion, Version).
 
+
 gen_enforced_dependency(Workspace, Dependency, DesiredVersion, Type) :-
   % Include all dependency versions from all workspaces
   workspace_has_dependency(Workspace, Dependency, LocalVersion, Type),
@@ -24,16 +25,20 @@ gen_enforced_dependency(Workspace, Dependency, DesiredVersion, Type) :-
   % semver ranges.
   pin_version(DesiredVersion, RemoteVersion).
 
+
 % This rule enforces that all workspaces define the same `engines.node` version
 % defined in the root `package.json`.
 gen_enforced_field(Workspace, 'engines.node', NodeVersion) :-
   gen_enforced_field('.', 'engines.node', NodeVersion).
 
+
 % Enforce that all packages have an "UNLICENSED" `license` field.
 gen_enforced_field(Workspace, 'license', 'UNLICENSED').
 
+
 % Enforce that all packages be private and not publishable to public npm.
 gen_enforced_field(Workspace, 'private', true).
+
 
 /*
  * Semver Utility Rules

@@ -1,0 +1,10 @@
+{
+  "extends": "../../../config/paths.tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../../../",
+    "rootDir": "../../../",
+    "outDir": "../../../build/ts"
+  },
+  "include": ["."],
+  "references": [{"path": "../../stack/rest-api"}]
+}

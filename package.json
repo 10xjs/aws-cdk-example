@@ -4,7 +4,7 @@
   "private": true,
   "license": "UNLICENSED",
   "workspaces": [
-    "packages/*"
+    "packages/*/*"
   ],
   "scripts": {
     "cdk": "cdk",
@@ -16,7 +16,8 @@
     "node": "14.13.0"
   },
   "devDependencies": {
-    "@types/eslint": "^7",
-    "eslint": "7.11.0"
+    "eslint": "7.11.0",
+    "prettier": "2.1.2",
+    "typescript": "4.0.3"
   }
 }

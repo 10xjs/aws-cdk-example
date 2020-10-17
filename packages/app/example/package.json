@@ -1,0 +1,19 @@
+{
+  "name": "@workspace/example-app",
+  "engines": {
+    "node": "14.13.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@workspace/eslint-config": "workspace:packages/config/eslint",
+    "@workspace/typescript-config": "workspace:packages/config/typescript",
+    "aws-cdk": "1.68.0",
+    "ts-node": "9.0.0",
+    "typescript": "4.0.3"
+  },
+  "dependencies": {
+    "@aws-cdk/core": "1.68.0",
+    "@workspace/rest-api": "workspace:packages/stack/rest-api"
+  }
+}

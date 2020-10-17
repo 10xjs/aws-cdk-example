@@ -1,0 +1,11 @@
+{
+  "extends": "./base.tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": false,
+    "paths": {
+      "@workspace/example-app": ["packages/app/example"],
+      "@workspace/rest-api-stack": ["packages/stack/rest-api"]
+    }
+  }
+}
