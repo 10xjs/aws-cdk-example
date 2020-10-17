@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "alwaysStrict": true,
+    "composite": true,
     "declaration": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "lib": ["es2018", "esnext.asynciterable"],
+    "lib": ["ESNext"],
     "module": "commonjs",
     "skipLibCheck": true,
     "strict": true,

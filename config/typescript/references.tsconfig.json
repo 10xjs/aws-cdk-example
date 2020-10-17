@@ -1,9 +1,0 @@
-{
-  "extends": "./paths.tsconfig.json",
-  "files": [],
-  "include": [],
-  "references": [
-    {"path": "../../packages/app/example"},
-    {"path": "../../packages/stack/rest-api"}
-  ]
-}

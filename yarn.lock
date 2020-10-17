@@ -680,33 +680,25 @@ __metadata:
   dependencies:
     "@aws-cdk/core": 1.68.0
     "@workspace/eslint-config": "workspace:packages/config/eslint"
-    "@workspace/rest-api": "workspace:packages/stack/rest-api"
-    "@workspace/typescript-config": "workspace:packages/config/typescript"
+    "@workspace/rest-api-stack": "workspace:packages/stack/rest-api"
     aws-cdk: 1.68.0
     ts-node: 9.0.0
     typescript: 4.0.3
   languageName: unknown
   linkType: soft
 
-"@workspace/rest-api@workspace:packages/stack/rest-api":
+"@workspace/rest-api-stack@workspace:packages/stack/rest-api":
   version: 0.0.0-use.local
-  resolution: "@workspace/rest-api@workspace:packages/stack/rest-api"
+  resolution: "@workspace/rest-api-stack@workspace:packages/stack/rest-api"
   dependencies:
     "@aws-cdk/aws-sns": 1.68.0
     "@aws-cdk/aws-sns-subscriptions": 1.68.0
     "@aws-cdk/aws-sqs": 1.68.0
     "@aws-cdk/core": 1.68.0
     "@workspace/eslint-config": "workspace:packages/config/eslint"
-    "@workspace/typescript-config": "workspace:packages/config/typescript"
     aws-cdk: 1.68.0
     ts-node: 9.0.0
     typescript: 4.0.3
-  languageName: unknown
-  linkType: soft
-
-"@workspace/typescript-config@workspace:packages/config/typescript":
-  version: 0.0.0-use.local
-  resolution: "@workspace/typescript-config@workspace:packages/config/typescript"
   languageName: unknown
   linkType: soft
 

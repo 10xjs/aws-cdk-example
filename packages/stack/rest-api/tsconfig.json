@@ -1,9 +1,8 @@
 {
-  "extends": "../../../config/paths.tsconfig.json",
+  "extends": "../../../base.tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "../../../",
-    "rootDir": "../../../",
-    "outDir": "../../../build/ts"
+    "rootDir": ".",
+    "outDir": "dist"
   },
   "include": ["."]
 }

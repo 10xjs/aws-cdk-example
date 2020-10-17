@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "cdk": "cdk",
+    "build:tsc": "cd $INIT_CWD && tsc",
     "test:lint": "cd $INIT_CWD && eslint .",
-    "test:format": "eslint --check $INIT_CWD",
     "test:unit": ""
   },
   "engines": {
