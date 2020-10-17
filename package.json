@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "cdk": "cdk",
-    "build:tsc": "cd $INIT_CWD && tsc",
+    "build:tsc": "cd $INIT_CWD && tsc -b",
     "test:lint": "cd $INIT_CWD && eslint .",
     "test:unit": ""
   },
