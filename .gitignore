@@ -5,6 +5,9 @@ coverage
 .cdk.staging
 cdk.out
 
+# TypeScript Build Artifacts
+.build
+
 # Yarn 2
 # See: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .yarn/*
