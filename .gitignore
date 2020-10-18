@@ -6,6 +6,7 @@ coverage
 cdk.out
 
 # TypeScript Build Artifacts
+.tsbuildinfo
 tsc.out
 
 # Yarn 2

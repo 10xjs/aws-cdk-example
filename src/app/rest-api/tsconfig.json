@@ -1,8 +1,7 @@
 {
-  "extends": "../../cdk.tsconfig.json",
+  "extends": "../../base.tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../tsc.out",
-    "rootDir": "../../"
+    "module": "commonjs"
   },
   "include": ["."],
   "references": [{ "path": "../../stack/rest-api" }]

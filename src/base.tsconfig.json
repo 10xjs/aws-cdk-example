@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
     "pretty": true,
+
     "target": "ES2018",
     "lib": ["ES2018"],
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "composite": true,
 
     "declaration": true,
@@ -23,7 +25,9 @@
 
     "newLine": "lf",
 
-    "experimentalDecorators": true
+    "incremental": true,
+    "outDir": "../tsc.out",
+    "rootDir": "."
   },
   "exclude": ["**/tsc.out", "**/cdk.out"]
 }
