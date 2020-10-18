@@ -8,7 +8,7 @@ const db = new AWS.DynamoDB.DocumentClient();
 
 export const handler: APIGatewayProxyHandler = async (event) => {
   try {
-    const response = await db
+    await db
       .delete({
         TableName: TABLE_NAME,
         Key: {

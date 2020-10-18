@@ -10,7 +10,7 @@
     "declarationMap": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "composite": true,
+    // "composite": true,
     "noEmitOnError": true,
 
     "strict": true,

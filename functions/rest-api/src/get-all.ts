@@ -2,7 +2,6 @@ import type { APIGatewayProxyHandler } from 'aws-lambda';
 import AWS from 'aws-sdk';
 
 const TABLE_NAME = process.env.TABLE_NAME ?? '';
-const PRIMARY_KEY = process.env.PRIMARY_KEY ?? '';
 
 const db = new AWS.DynamoDB.DocumentClient();
 
