@@ -6,7 +6,7 @@ coverage
 cdk.out
 
 # TypeScript Build Artifacts
-.build
+tsc.out
 
 # Yarn 2
 # See: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored

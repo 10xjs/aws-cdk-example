@@ -1,6 +1,6 @@
 import type { APIGatewayProxyHandler } from 'aws-lambda';
-import AWS from 'aws-sdk';
-import uuid from 'uuid';
+import * as AWS from 'aws-sdk';
+import * as uuid from 'uuid';
 
 const TABLE_NAME = process.env.TABLE_NAME ?? '';
 const PRIMARY_KEY = process.env.PRIMARY_KEY ?? '';
