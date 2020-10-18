@@ -1,5 +1,5 @@
 {
-  "app": "ts-node src/bin/rest-api.ts",
+  "app": "src/app/rest-api/tsc.out/index.js",
   "context": {
     "@aws-cdk/core:enableStackNameDuplicates": "true",
     "aws-cdk:enableDiffNoFail": "true",

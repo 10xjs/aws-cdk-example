@@ -1,7 +1,9 @@
 {
-  "extends": "../../base.tsconfig.json",
+  "extends": "../../cdk.tsconfig.json",
   "compilerOptions": {
-    "outDir": "./tsc.out"
+    "outDir": "../../tsc.out",
+    "rootDir": "../../"
   },
+  "include": ["."],
   "references": [{ "path": "../../stack/rest-api" }]
 }

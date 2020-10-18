@@ -9,6 +9,7 @@
   "scripts": {
     "cdk": "cdk",
     "test:lint": "eslint .",
+    "build": "tsc -b src",
     "build:function:rest-api": "tsc -b src/function/rest-api",
     "build:app:rest-api": "tsc -b src/app/rest-api"
   },

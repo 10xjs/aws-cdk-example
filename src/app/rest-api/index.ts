@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import * as cdk from '@aws-cdk/core';
 
 import { RestApiStack } from '../../stack/rest-api';
