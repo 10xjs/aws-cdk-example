@@ -1,6 +1,6 @@
 import * as cdk from '@aws-cdk/core';
 
-import { RestApiStack } from '../../../lib/rest-api/src/stack';
+import { RestApiStack } from '../../lib/rest-api/src/stack';
 
 const app = new cdk.App();
 

@@ -9,7 +9,8 @@
   "scripts": {
     "cdk": "cdk",
     "test:lint": "eslint .",
-    "test:format": "prettier --check ."
+    "test:format": "prettier --check .",
+    "build:tsc": "tsc -p src"
   },
   "engines": {
     "node": "14.13.0"
