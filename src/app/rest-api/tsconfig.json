@@ -1,0 +1,7 @@
+{
+  "extends": "../../base.tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./tsc.out"
+  },
+  "references": [{ "path": "../../stack/rest-api" }]
+}

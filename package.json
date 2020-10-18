@@ -4,23 +4,27 @@
   "private": true,
   "license": "UNLICENSED",
   "workspaces": [
-    "functions/*"
+    "src/**/*"
   ],
   "scripts": {
     "cdk": "cdk",
     "test:lint": "eslint .",
-    "test:format": "prettier --check .",
-    "build:tsc": "tsc -p src"
+    "build:function:rest-api": "tsc -b src/function/rest-api",
+    "build:app:rest-api": "tsc -b src/app/rest-api"
   },
   "engines": {
     "node": "14.13.0"
   },
   "devDependencies": {
+    "@types/aws-lambda": "8.10.64",
+    "@types/aws-sdk": "2.7.0",
     "@types/node": "14.11.10",
+    "@types/uuid": "8.3.0",
     "@typescript-eslint/eslint-plugin": "4.4.1",
     "@typescript-eslint/parser": "4.4.1",
     "aws-cdk": "1.68.0",
     "aws-cdk-local": "1.65.0",
+    "aws-sdk": "2.773.0",
     "babel-core": "6.26.3",
     "eslint": "7.11.0",
     "eslint-config-standard-with-typescript": "19.0.1",
@@ -39,6 +43,7 @@
     "@aws-cdk/aws-lambda": "1.68.0",
     "@aws-cdk/aws-lambda-nodejs": "1.68.0",
     "@aws-cdk/core": "1.68.0",
-    "cdk-constants": "3.0.3"
+    "cdk-constants": "3.0.3",
+    "uuid": "8.3.1"
   }
 }

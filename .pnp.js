@@ -21,17 +21,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "cdk-template-typescript-nodejs",
         "reference": "workspace:."
-      },
-      {
-        "name": "rest-api-functions",
-        "reference": "workspace:functions/rest-api"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["cdk-template-typescript-nodejs", ["workspace:."]],
-      ["rest-api-functions", ["workspace:functions/rest-api"]]
+      ["cdk-template-typescript-nodejs", ["workspace:."]]
     ],
     "fallbackPool": [
     ],
@@ -47,11 +42,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-cdk/aws-lambda", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:1.68.0"],
             ["@aws-cdk/aws-lambda-nodejs", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:1.68.0"],
             ["@aws-cdk/core", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:1.68.0"],
+            ["@types/aws-lambda", "npm:8.10.64"],
+            ["@types/aws-sdk", "npm:2.7.0"],
             ["@types/node", "npm:14.11.10"],
+            ["@types/uuid", "npm:8.3.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.1"],
             ["@typescript-eslint/parser", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.1"],
             ["aws-cdk", "npm:1.68.0"],
             ["aws-cdk-local", "npm:1.65.0"],
+            ["aws-sdk", "npm:2.773.0"],
             ["babel-core", "npm:6.26.3"],
             ["cdk-constants", "npm:3.0.3"],
             ["eslint", "npm:7.11.0"],
@@ -63,7 +62,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-standard", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.0.1"],
             ["prettier", "npm:2.1.2"],
             ["ts-node", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:9.0.0"],
-            ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"]
+            ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"],
+            ["uuid", "npm:8.3.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -1479,7 +1479,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-aws-sdk-npm-2.7.0-bc78404722-ae3633e0e2.zip/node_modules/@types/aws-sdk/",
           "packageDependencies": [
             ["@types/aws-sdk", "npm:2.7.0"],
-            ["aws-sdk", "npm:2.712.0"]
+            ["aws-sdk", "npm:2.773.0"]
           ],
           "linkType": "HARD",
         }]
@@ -1945,36 +1945,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["aws-lambda", [
-        ["npm:1.0.6", {
-          "packageLocation": "./.yarn/cache/aws-lambda-npm-1.0.6-0430941d7f-76b58ac540.zip/node_modules/aws-lambda/",
-          "packageDependencies": [
-            ["aws-lambda", "npm:1.0.6"],
-            ["aws-sdk", "npm:2.712.0"],
-            ["commander", "npm:3.0.2"],
-            ["js-yaml", "npm:3.14.0"],
-            ["watchpack", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["aws-sdk", [
-        ["npm:2.712.0", {
-          "packageLocation": "./.yarn/cache/aws-sdk-npm-2.712.0-2a829cb6f6-35ecf59d99.zip/node_modules/aws-sdk/",
-          "packageDependencies": [
-            ["aws-sdk", "npm:2.712.0"],
-            ["buffer", "npm:4.9.2"],
-            ["events", "npm:1.1.1"],
-            ["ieee754", "npm:1.1.13"],
-            ["jmespath", "npm:0.15.0"],
-            ["querystring", "npm:0.2.0"],
-            ["sax", "npm:1.2.1"],
-            ["url", "npm:0.10.3"],
-            ["uuid", "npm:3.3.2"],
-            ["xml2js", "npm:0.4.19"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:2.773.0", {
           "packageLocation": "./.yarn/cache/aws-sdk-npm-2.773.0-0e6042c7c6-9bf30ebfe4.zip/node_modules/aws-sdk/",
           "packageDependencies": [
@@ -2302,11 +2273,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-cdk/aws-lambda", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:1.68.0"],
             ["@aws-cdk/aws-lambda-nodejs", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:1.68.0"],
             ["@aws-cdk/core", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:1.68.0"],
+            ["@types/aws-lambda", "npm:8.10.64"],
+            ["@types/aws-sdk", "npm:2.7.0"],
             ["@types/node", "npm:14.11.10"],
+            ["@types/uuid", "npm:8.3.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.1"],
             ["@typescript-eslint/parser", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.4.1"],
             ["aws-cdk", "npm:1.68.0"],
             ["aws-cdk-local", "npm:1.65.0"],
+            ["aws-sdk", "npm:2.773.0"],
             ["babel-core", "npm:6.26.3"],
             ["cdk-constants", "npm:3.0.3"],
             ["eslint", "npm:7.11.0"],
@@ -2318,7 +2293,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-standard", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:4.0.1"],
             ["prettier", "npm:2.1.2"],
             ["ts-node", "virtual:047735918382c329fc32f5708d4cd62cc2139ce73182503e0377662b8f9fe546338f23295e5f058409b590f22e56510c01d4366d72051d79cd7716094018a7a9#npm:9.0.0"],
-            ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"]
+            ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"],
+            ["uuid", "npm:8.3.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -2435,15 +2411,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/colors-npm-1.4.0-7e2cf12234-a0f266ac04.zip/node_modules/colors/",
           "packageDependencies": [
             ["colors", "npm:1.4.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["commander", [
-        ["npm:3.0.2", {
-          "packageLocation": "./.yarn/cache/commander-npm-3.0.2-7c81f1ab98-28071a49d2.zip/node_modules/commander/",
-          "packageDependencies": [
-            ["commander", "npm:3.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -3482,15 +3449,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["glob-parent", "npm:5.1.1"],
             ["is-glob", "npm:4.0.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["glob-to-regexp", [
-        ["npm:0.4.1", {
-          "packageLocation": "./.yarn/cache/glob-to-regexp-npm-0.4.1-cd697e0fc7-6093c15d9f.zip/node_modules/glob-to-regexp/",
-          "packageDependencies": [
-            ["glob-to-regexp", "npm:0.4.1"]
           ],
           "linkType": "HARD",
         }]
@@ -4790,23 +4748,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["rest-api-functions", [
-        ["workspace:functions/rest-api", {
-          "packageLocation": "./functions/rest-api/",
-          "packageDependencies": [
-            ["rest-api-functions", "workspace:functions/rest-api"],
-            ["@types/aws-lambda", "npm:8.10.64"],
-            ["@types/aws-sdk", "npm:2.7.0"],
-            ["@types/node", "npm:14.11.10"],
-            ["@types/uuid", "npm:8.3.0"],
-            ["aws-lambda", "npm:1.0.6"],
-            ["aws-sdk", "npm:2.712.0"],
-            ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"],
-            ["uuid", "npm:8.3.1"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
       ["reusify", [
         ["npm:1.0.4", {
           "packageLocation": "./.yarn/cache/reusify-npm-1.0.4-95ac4aec11-08ef02ed05.zip/node_modules/reusify/",
@@ -5515,17 +5456,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["validate-npm-package-license", "npm:3.0.4"],
             ["spdx-correct", "npm:3.1.1"],
             ["spdx-expression-parse", "npm:3.0.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["watchpack", [
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/cache/watchpack-npm-2.0.0-da98476fce-de23b15ad1.zip/node_modules/watchpack/",
-          "packageDependencies": [
-            ["watchpack", "npm:2.0.0"],
-            ["glob-to-regexp", "npm:0.4.1"],
-            ["graceful-fs", "npm:4.2.4"]
           ],
           "linkType": "HARD",
         }]
