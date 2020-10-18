@@ -1,0 +1,41 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.handler = void 0;
+
+var _awsSdk = _interopRequireDefault(require("aws-sdk"));
+
+var _uuid = _interopRequireDefault(require("uuid"));
+
+var _process$env$TABLE_NA, _process$env$PRIMARY_;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const TABLE_NAME = (_process$env$TABLE_NA = process.env.TABLE_NAME) !== null && _process$env$TABLE_NA !== void 0 ? _process$env$TABLE_NA : '';
+const PRIMARY_KEY = (_process$env$PRIMARY_ = process.env.PRIMARY_KEY) !== null && _process$env$PRIMARY_ !== void 0 ? _process$env$PRIMARY_ : '';
+const db = new _awsSdk.default.DynamoDB.DocumentClient();
+
+const handler = async event => {
+  try {
+    const item = JSON.parse(event.body);
+    await db.put({
+      TableName: TABLE_NAME,
+      Item: { ...item,
+        [PRIMARY_KEY]: _uuid.default.v4()
+      }
+    }).promise();
+    return {
+      statusCode: 201,
+      body: ''
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(error)
+    };
+  }
+};
+
+exports.handler = handler;

@@ -1,8 +1,9 @@
+import * as path from 'path';
+
 module.exports = {
   extends: 'standard-with-typescript',
   parserOptions: {
-    tsconfigRootDir: 'src',
-    project: './tsconfig-base.json',
+    project: path.join(__dirname, 'tsconfig-base.json'),
     sourceType: 'module',
   },
 
