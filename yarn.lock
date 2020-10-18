@@ -1084,6 +1084,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aws-lambda@npm:1.0.6":
+  version: 1.0.6
+  resolution: "aws-lambda@npm:1.0.6"
+  dependencies:
+    aws-sdk: "*"
+    commander: ^3.0.2
+    js-yaml: ^3.13.1
+    watchpack: ^2.0.0-beta.10
+  bin:
+    lambda: ./bin/lambda
+  checksum: 76b58ac5405c133b56350b9aecaa5a3902ce157e60427272831e387a0790c43d2042655e15a8cd15895259574d09a501713c2164b78544616ae7407f8893eafe
+  languageName: node
+  linkType: hard
+
 "aws-sdk@npm:*, aws-sdk@npm:2.712.0":
   version: 2.712.0
   resolution: "aws-sdk@npm:2.712.0"
@@ -1523,6 +1537,13 @@ __metadata:
   version: 1.4.0
   resolution: "colors@npm:1.4.0"
   checksum: a0f266ac041a9774d92cc9624a984707678d2eeec125d54e8d8231075ce36c24c5352fb5d0f90c6ee420d0f63e354417cec716386ad341309334aad18e32b933
+  languageName: node
+  linkType: hard
+
+"commander@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "commander@npm:3.0.2"
+  checksum: 28071a49d23606c1e31f1f275d2aac9c03833cb3442e04b798ffbcd5f7fb7a1fbfc6b5bc6a69b862df83f475378665623788118d189c254a173248c452bd77a2
   languageName: node
   linkType: hard
 
@@ -2381,6 +2402,13 @@ __metadata:
   dependencies:
     is-glob: ^4.0.1
   checksum: 2af6e196fba4071fb07ba261366e446ba2b320e6db0a2069cf8e12117c5811abc6721f08546148048882d01120df47e56aa5a965517a6e5ba19bfeb792655119
+  languageName: node
+  linkType: hard
+
+"glob-to-regexp@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "glob-to-regexp@npm:0.4.1"
+  checksum: 6093c15d9f92d010998dd7cc7a5ba4e74eea83878d3f8c2616c6935dab9a79bf31ca7ddc214604b84a87c65b9e51481221e325be68f5fe6db8ed27dc76a5230f
   languageName: node
   linkType: hard
 
@@ -3551,6 +3579,7 @@ __metadata:
     "@types/aws-sdk": 2.7.0
     "@types/node": 14.11.10
     "@types/uuid": 8.3.0
+    aws-lambda: 1.0.6
     aws-sdk: 2.712.0
     typescript: 4.0.3
     uuid: 8.3.1
@@ -4199,6 +4228,16 @@ typescript@4.0.3:
     spdx-correct: ^3.0.0
     spdx-expression-parse: ^3.0.0
   checksum: 940899bd4eacfa012ceecb10a5814ba0e8103da5243aa74d0d62f1f8a405efcd23e034fb7193e2d05b392870c53aabcb1f66439b062075cdcb28bc5d562a8ff6
+  languageName: node
+  linkType: hard
+
+"watchpack@npm:^2.0.0-beta.10":
+  version: 2.0.0
+  resolution: "watchpack@npm:2.0.0"
+  dependencies:
+    glob-to-regexp: ^0.4.1
+    graceful-fs: ^4.1.2
+  checksum: de23b15ad1e07b56866ff4f1281692ef5ee3b0f114b3dd1d1beb45271e3a4510a7853ea1824fe1eb232e23a3765a5f9c5ffcc51040c85433664851e1d9c28083
   languageName: node
   linkType: hard
 

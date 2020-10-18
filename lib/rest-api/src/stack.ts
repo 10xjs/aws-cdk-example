@@ -1,6 +1,5 @@
 import * as cdk from '@aws-cdk/core';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import * as lambdaNode from '@aws-cdk/aws-lambda-nodejs';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as apigateway from '@aws-cdk/aws-apigateway';
 
@@ -27,9 +26,10 @@ export class RestApiStack extends cdk.Stack {
       method: string
     ) => {
       // https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-nodejs-readme.html
-      const handler = new lambdaNode.NodejsFunction(this, name, {
+      const handler = new lambda.Function(this, name, {
+        code: new lambda.AssetCode('../../functions/rest-api/cdk.out'),
+        handler: `{name}.handler`,
         runtime: lambda.Runtime.NODEJS_12_X,
-        entry: require.resolve(`../../functions/rest-api/src/${name}.ts`),
         environment: {
           TABLE_NAME: table.tableName,
           PRIMARY_KEY: PRIMARY_KEY,
