@@ -5,9 +5,6 @@ coverage
 .cdk.staging
 cdk.out
 
-# TypeScript Build Artifacts
-tsc.out
-
 # Yarn 2
 .yarn/*
 .pnp.js

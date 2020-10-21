@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-require('ts-node').register({ dir: './lib/app/rest-api' });
+require('ts-node/register');
 require('../lib/app/rest-api');

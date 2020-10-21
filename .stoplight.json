@@ -1,5 +1,5 @@
 {
-  "exclude": [".vscode", ".yarn", "bin", "cdk.out", "lib", "resources"],
+  "exclude": [".vscode", ".yarn", "bin", "config", "src", "cdk.out", "lib"],
   "formats": {
     "openapi": {
       "rootDir": "reference"

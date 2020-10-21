@@ -2,8 +2,7 @@ import * as cdk from '@aws-cdk/core';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as apigateway from '@aws-cdk/aws-apigateway';
-
-import { WebpackAssetCode } from '../../util/webpack-asset-code';
+import { WebpackAssetCode } from '../../util/webpack-function';
 
 const PRIMARY_KEY = 'id';
 
@@ -25,12 +24,10 @@ export class RestApiStack extends cdk.Stack {
       method: string
     ) => {
       const handler = new lambda.Function(this, name, {
-        code: new WebpackAssetCode([
-          '--config',
-          require.resolve('../../../src/webpack.config.js'),
-          '--entry',
-          require.resolve(`../../../src/rest-api/${name}.ts`),
-        ]),
+        code: new WebpackAssetCode({
+          context: process.cwd(),
+          entry: require.resolve(`../../../src/rest-api/${name}.ts`),
+        }),
         handler: 'main.handler',
         runtime: lambda.Runtime.NODEJS_12_X,
         environment: {
