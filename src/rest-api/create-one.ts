@@ -9,21 +9,20 @@ const db = new AWS.DynamoDB.DocumentClient();
 
 export const handler: APIGatewayProxyHandler = async (event) => {
   try {
-    const item = JSON.parse(event.body!);
-
-    await db
+    const response = await db
       .put({
         TableName: TABLE_NAME,
         Item: {
-          ...item,
+          ...JSON.parse(event.body!),
           [PRIMARY_KEY]: uuid.v4(),
         },
+        ReturnValues: 'ALL_NEW',
       })
       .promise();
 
     return {
       statusCode: 201,
-      body: '',
+      body: JSON.stringify(response.Attributes),
     };
   } catch (error) {
     return {

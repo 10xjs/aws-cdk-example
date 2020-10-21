@@ -16,8 +16,7 @@ export class RestApiStack extends cdk.Stack {
         name: PRIMARY_KEY,
         type: dynamodb.AttributeType.STRING,
       },
-      tableName: 'items-2',
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      tableName: 'items',
     });
 
     const createHandler = (
@@ -37,6 +36,7 @@ export class RestApiStack extends cdk.Stack {
         environment: {
           TABLE_NAME: table.tableName,
           PRIMARY_KEY: PRIMARY_KEY,
+          NODE_OPTIONS: '--enable-source-maps',
         },
       });
 
@@ -48,6 +48,10 @@ export class RestApiStack extends cdk.Stack {
     const api = new apigateway.RestApi(this, 'items-api', {
       restApiName: 'Items Service',
       deployOptions: {
+        metricsEnabled: true,
+        dataTraceEnabled: true,
+        loggingLevel: apigateway.MethodLoggingLevel.INFO,
+        tracingEnabled: true,
         stageName: 'dev',
       },
     });

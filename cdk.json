@@ -1,5 +1,5 @@
 {
-  "app": "./lib/app/rest-api/index.ts",
+  "app": "./bin/rest-api ",
   "context": {
     "@aws-cdk/core:enableStackNameDuplicates": true,
     "aws-cdk:enableDiffNoFail": true,

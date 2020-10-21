@@ -1,22 +1,23 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
 module.exports = {
   context: __dirname,
+  target: 'node',
 
-  cache: {
-    type: 'filesystem',
+  externals: {
+    'aws-sdk': 'commonjs2 aws-sdk',
+  },
 
-    buildDependencies: {
-      config: [__filename],
-    },
+  devtool: 'inline-source-map',
+
+  output: {
+    libraryTarget: 'commonjs',
+  },
+
+  optimization: {
+    minimize: false,
   },
 
   resolve: {
     extensions: ['.ts', '.js'],
-  },
-
-  externals: {
-    'aws-sdk': 'commonjs2 aws-sdk',
   },
 
   module: {
@@ -24,15 +25,16 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
-        },
+        use: 'ts-loader',
       },
     ],
   },
 
-  plugins: [new ForkTsCheckerWebpackPlugin()],
+  cache: {
+    type: 'filesystem',
+
+    buildDependencies: {
+      config: [__filename, './tsconfig.json', '../config/base.tsconfig.json'],
+    },
+  },
 };
