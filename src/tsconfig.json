@@ -1,9 +1,4 @@
 {
-  "files": [],
-  "include": [],
-  "references": [
-    { "path": "./app" },
-    { "path": "./function" },
-    { "path": "./stack" }
-  ]
+  "extends": "../config/base.tsconfig.json",
+  "include": ["."]
 }

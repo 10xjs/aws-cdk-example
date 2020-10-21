@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+    <script crossorigin="" src="7a70011e1b6a1e170b7fc1b10dda212d"></script>
+    <script crossorigin="" src="d65f60f13c0324acf7a35de96ae53a6c"></script>
+    <script data-parcel-key="4a9a2965b83c7faf70df5b26742424bb">
+      import { Graphviz } from 'graphviz-react';
+
+      ReactDOM.render(
+        <Graphviz
+          dot={`graph {
+  grandparent -- "parent A";
+  child;
+  "parent B" -- child;
+  grandparent --  "parent B";
+}`}
+        />,
+        document.getElementById('root')
+      );
+    </script>
+  </div></body>
+</html>

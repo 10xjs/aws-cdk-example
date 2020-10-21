@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=require("aws-sdk");process.env.TABLE_NAME,process.env.PRIMARY_KEY,new e.DynamoDB.DocumentClient})();

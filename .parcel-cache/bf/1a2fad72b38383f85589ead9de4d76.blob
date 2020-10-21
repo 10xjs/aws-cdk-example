@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <svg width="960" height="600"><g></g></svg>
+
+    <script crossorigin="" src="47abd0f5acdf36c74f6eb971001fb32a"></script>
+    <script crossorigin="" src="2ce253b9b7b31f84bf6c9a8e1ef23468"></script>
+    <script crossorigin="" src="8d3db98b23c419719fd100e16bf448e6"></script>
+    <script crossorigin="" src="272890177daa3b5267515439e703877f"></script>
+    <script crossorigin="" src="46da19ec2ab0cdf652aee75a88f9c534"></script>
+    <script crossorigin="" src="ce9bd2d0f9a24dcf82daa7f18c37307d"></script>
+    <script data-parcel-key="d88dc2bf4cbeb64f13c6169f5dd90b70">
+      const graph = dagreD3.graphlib.Graph().setGraph({});
+
+      const svg = d3.select('svg');
+      const inner = svg.select('g');
+
+      const zoom = d3.zoom().on('zoom', function () {
+        inner.attr('transform', d3.event.transform);
+      });
+
+      svg.call(zoom);
+
+      const render = new dagreD3.render();
+
+      render(inner, graph);
+
+      const initialScale = 0.75;
+
+      svg.call(
+        zoom.transform,
+        d3.zoomIdentity
+          .translate(
+            (svg.attr('width') - g.graph().width * initialScale) / 2,
+            20
+          )
+          .scale(initialScale)
+      );
+
+      svg.attr('height', g.graph().height * initialScale + 40);
+
+      fetch('template.dot')
+        .then((response) => response.text())
+        .then((template) => {
+          graph.setGraph(graphlibDot.read(template));
+        });
+    </script>
+  </body>
+</html>

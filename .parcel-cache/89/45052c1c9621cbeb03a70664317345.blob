@@ -1,0 +1,15 @@
+const graph = new dagreD3.graphLib.Graph().setGraph({});
+const svg = d3.select('svg');
+const inner = svg.select('g');
+const zoom = d3.zoom().on('zoom', function () {
+  inner.attr('transform', d3.event.transform);
+});
+svg.call(zoom);
+const render = new dagreD3.render();
+render(inner, graph);
+const initialScale = 0.75;
+svg.call(zoom.transform, d3.zoomIdentity.translate((svg.attr('width') - g.graph().width * initialScale) / 2, 20).scale(initialScale));
+svg.attr('height', g.graph().height * initialScale + 40);
+fetch('template.dot').then(response => response.text()).then(template => {
+  graph.setGraph(graphlibDot.read(template));
+});

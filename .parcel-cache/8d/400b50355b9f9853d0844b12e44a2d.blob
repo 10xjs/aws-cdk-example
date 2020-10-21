@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <svg width="960" height="600"><g></g></svg>
+
+    <script crossorigin="" src="https://d3js.org/d3.v5.min.js"></script>
+    <script crossorigin="" src="https://unpkg.com/dagre-d3@0.6.4/dist/dagre-d3.js"></script>
+
+    <script crossorigin="" src="https://unpkg.com/graphlib-dot@0.6.4/dist/graphlib-dot.js"></script>
+    <script src"index.js"=""></script>
+  </body>
+</html>
