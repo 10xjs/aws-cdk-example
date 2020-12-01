@@ -5,16 +5,15 @@ import { WebpackAssetCode } from './webpack-asset-code';
 export interface WebpackFunctionProps
   extends Omit<lambda.FunctionProps, 'code' | 'handler' | 'runtime'> {
   entry: string;
-  context: string;
   handler?: string;
 }
 
 export class WebpackFunction extends lambda.Function {
-  constructor(scope: cdk.Construct, props: WebpackFunctionProps) {
-    const { handler = 'main.handler', context, entry, ...rest } = props;
+  constructor(scope: cdk.Construct, id: string, props: WebpackFunctionProps) {
+    const { entry, handler = 'main.handler', ...rest } = props;
 
-    super(scope, entry, {
-      code: new WebpackAssetCode({ context, entry }),
+    super(scope, id, {
+      code: new WebpackAssetCode(entry),
       handler,
       runtime: lambda.Runtime.NODEJS_12_X,
       ...rest,

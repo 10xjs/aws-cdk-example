@@ -21,7 +21,6 @@ export const handler: APIGatewayProxyHandler = async (event) => {
           ...JSON.parse(event.body!),
           [PRIMARY_KEY]: uuid.v4(),
         },
-        ReturnValues: 'ALL_NEW',
       })
       .promise();
 

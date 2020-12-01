@@ -2,18 +2,6 @@
 
 ## Getting Started
 
-<!-- ### AWS SAM CLI
-
-This project requires the `sam` command line tool.
-
-To install the AWS SAM CLI, see the following instructions for your development host:
-
-- [Installing the AWS SAM CLI on Linux](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html)
-- [Installing the AWS SAM CLI on Windows](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-windows.html)
-- [Installing the AWS SAM CLI on macOS](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-mac.html)
-
-> Contrary to what the linked documentation may suggest, an AWS account with administrator permissions is not required to install `aws-sam-cli` -->
-
 ### Yarn 2
 
 This project uses Yarn 2, and the Yarn binary is managed locally by (and committed directly to) this project repo. However, it is still necessary to have _a version_ of yarn installed globally to provide `yarn` on the shell path.

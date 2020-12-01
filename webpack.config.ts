@@ -1,4 +1,7 @@
-module.exports = {
+import * as path from 'path';
+import * as webpack from 'webpack';
+
+const config: webpack.Configuration = {
   context: __dirname,
   target: 'node',
 
@@ -9,6 +12,7 @@ module.exports = {
   devtool: 'inline-source-map',
 
   output: {
+    path: path.resolve(__dirname, 'webpack.out'),
     libraryTarget: 'commonjs',
   },
 
@@ -34,8 +38,9 @@ module.exports = {
     type: 'filesystem',
 
     buildDependencies: {
-      webpackConfig: [__filename],
-      tsConfig: ['./tsconfig.json'],
+      config: [__filename],
     },
   },
 };
+
+export default config;
